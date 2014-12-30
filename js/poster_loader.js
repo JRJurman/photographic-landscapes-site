@@ -14,7 +14,8 @@ $(document).ready(function() {
   var folders = [ "america",
                   "japan",
                   "children",
-                  "black-metal"];
+                  "black-metal",
+                  "detroit"];
 
 
   // add the initial row (where the images will sit)
