@@ -45,8 +45,8 @@ $(document).ready(function() {
     }
 
     // get the info for the full page version
-    full_path = "images-packaging/" + folder + "/full.png";
-    full_text_path = "images-packaging/" + folder + "/full_text.txt";
+    full_path = "images-spring/" + folder + "/full.png";
+    full_text_path = "images-spring/" + folder + "/full_text.txt";
 
 
     // append a div for the image and text
@@ -62,7 +62,7 @@ $(document).ready(function() {
     ')
 
     // try to pull in other images (e.g. full1.png, full2.png, etc...)
-    full_path_part = "images-packaging/" + folder + "/full";
+    full_path_part = "images-spring/" + folder + "/full";
     current_img = 1;
     current_path = full_path_part + current_img + ".png";
     // while we still have images to load

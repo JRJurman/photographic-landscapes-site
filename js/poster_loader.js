@@ -25,8 +25,8 @@ $(document).ready(function() {
   $.each( folders, function(index,folder) {
 
     // get the package info
-    thumb_path = "images-posters/" + folder + "/thumb.png";
-    alt_text_path = "images-posters/" + folder + "/alt_text.txt";
+    thumb_path = "images-fall/" + folder + "/thumb.png";
+    alt_text_path = "images-fall/" + folder + "/alt_text.txt";
 
     // append a div for the thumbnail and text
     $(".thumbs.row").last().append('\
@@ -48,8 +48,8 @@ $(document).ready(function() {
     }
 
     // get the info for the full page version
-    full_path = "images-posters/" + folder + "/full.png";
-    full_text_path = "images-posters/" + folder + "/full_text.txt";
+    full_path = "images-fall/" + folder + "/full.png";
+    full_text_path = "images-fall/" + folder + "/full_text.txt";
 
 
     // append a div for the image and text
@@ -65,7 +65,7 @@ $(document).ready(function() {
     ')
 
     // try to pull in other images (e.g. full1.png, full2.png, etc...)
-    full_path_part = "images-posters/" + folder + "/full";
+    full_path_part = "images-fall/" + folder + "/full";
     current_img = 1;
     current_path = full_path_part + current_img + ".png";
     // while we still have images to load
