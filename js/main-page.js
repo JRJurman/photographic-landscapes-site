@@ -1,3 +1,17 @@
+winterHover = function() {
+  document.querySelector("#landscape-nav-image").setAttribute("src", "images/winter_nav.png")
+}
+fallHover = function() {
+  document.querySelector("#landscape-nav-image").setAttribute("src", "images/fall_nav.png")
+}
+springHover = function() {
+  document.querySelector("#landscape-nav-image").setAttribute("src", "images/spring_nav.png")
+}
+defaultHover = function() {
+  document.querySelector("#landscape-nav-image").setAttribute("src", "images/default_nav.png")
+}
+
+
 // when the document has been loaded
 $(document).ready(function() {
   $(".thumbs.row.posters").hide();

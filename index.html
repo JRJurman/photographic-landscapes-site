@@ -55,6 +55,16 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+  <div id="landscape-nav">
+    <img id="landscape-nav-image" src="images/default_nav.png" usemap="#landscape-nav">
+    <map name="landscape-nav">
+      <area class="winter" shape="poly" coords="12,24, 598,24, 12,856" onMouseOver="winterHover()" href="/" alt="winter">
+      <area class="spring" shape="poly" coords="622,24, 1236,24, 652,856, 36,856" onMouseOver="springHover()" href="/" alt="spring">
+      <area class="fall" shape="poly" coords="1261,24, 1261,856, 673,856" onMouseOver="fallHover()" href="/" alt="fall">
+      <area shape="default" nohref="nohref" onMouseOver="defaultHover()">
+    </map>
+  </div>
+
   <div id="thumbnails" class="container"></div>
   <div id="fulls" class="container"></div>
 
