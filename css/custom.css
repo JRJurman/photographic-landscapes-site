@@ -5,7 +5,7 @@ li {
 
 #header {
   padding-top: 3%;
-  padding-left: 10%;
+  text-align: center;
   margin-bottom: 15%;
 }
 
@@ -14,7 +14,7 @@ li {
 }
 
 #navigation {
-  float: right;
+  text-align: center;
   padding-right: 13%;
 }
 
