@@ -46,3 +46,5 @@ $(document).ready(function() {
     $("#about-me").hide();
   });
 });
+
+imageMapResize("map#landscape-nav-map");
