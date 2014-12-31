@@ -22,8 +22,8 @@ $(document).ready(function() {
   $.each( folders, function(index,folder) {
 
     // get the package info
-    thumb_path = "images-packaging/" + folder + "/thumb.png";
-    alt_text_path = "images-packaging/" + folder + "/alt_text.txt";
+    thumb_path = "images-spring/" + folder + "/thumb.png";
+    alt_text_path = "images-spring/" + folder + "/alt_text.txt";
 
     // append a div for the thumbnail and text
     $(".thumbs.row").last().append('\
