@@ -6,16 +6,15 @@ li {
 #header {
   padding-top: 3%;
   text-align: center;
-  margin-bottom: 15%;
+  margin-bottom: 8%;
 }
 
-#logo {
-
+#landscape-nav {
+  text-align: center;
 }
 
 #navigation {
   text-align: center;
-  padding-right: 13%;
 }
 
 a {
@@ -25,6 +24,10 @@ a {
 
 a.menu-button {
   padding-left: 20px;
+}
+
+a.inactive {
+  color: grey;
 }
 
 #submit-form {
