@@ -31,6 +31,7 @@ function nav_content_switcher(type) {
     set_selector_display("#about-me", 'none');
 
     set_selector_display("#landscape-nav", '');
+    imageMapResize("#landscape-nav-map");
   }
   else if (type == 'about-me') {
     set_selector_display(".thumbs.row", 'none');
@@ -63,8 +64,47 @@ function nav_content_switcher(type) {
   }
 }
 
+// function that takes a URL and navigates to a page
+function URL_Navigator(urlString) {
+
+  // function to tell us if any one element from a list is in another
+  // return the index of the secondList which matched the firstList
+  function elementSearch(firstList, secondList) {
+    var secondListIndex, i;
+
+    for (i=0; i<firstList.length; i++) {
+      secondListIndex = secondList.indexOf(firstList[i]);
+      if (secondListIndex != -1) {
+        break;
+      }
+    }
+    return secondListIndex;
+  }
+
+  // look for element that points to 'fall', 'winter' or 'spring'
+  var splitURL, folderURLIndex, folderURLTitle, imageURLTitle;
+  splitURL = urlString.split("#");
+  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchasing',
+                                  'fall', 'winter', 'spring'], splitURL);
+
+  // if we found a folder in the url
+  if (folderURLIndex != -1) {
+    folderURLTitle = splitURL[folderURLIndex];
+    nav_content_switcher(folderURLTitle);
+
+    // check if that was the last element
+    // (otherwise we need to point to a specific element)
+    if (folderURLIndex != splitURL.length-1) {
+      imageURLTitle = splitURL[folderURLIndex+1];
+      document.querySelector("img#"+imageURLTitle).click();
+    }
+  }
+
+}
+
 // when the document has been loaded
 document.addEventListener('DOMContentLoaded', function(){
   nav_content_switcher('home');
   imageMapResize("#landscape-nav-map");
+  URL_Navigator(document.URL);
 });

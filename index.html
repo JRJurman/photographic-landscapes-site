@@ -44,10 +44,10 @@
       </a>
     </div>
     <div id="navigation">
-      <a id="home-button" class="menu-button" onclick="nav_content_switcher('home')" href="#">home</a>
-      <a id="about-me-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#">about</a>
-      <a id="shows-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#">shows</a>
-      <a id="purchasing-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#">purchasing</a>
+      <a id="home-button" class="menu-button" onclick="nav_content_switcher('home')" href="#home">home</a>
+      <a id="about-me-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#about-me">about</a>
+      <a id="shows-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#shows">shows</a>
+      <a id="purchasing-button" class="menu-button" onclick="nav_content_switcher('about-me')" href="#purchasing">purchasing</a>
     </div>
   </div>
 
@@ -60,11 +60,11 @@
         <img id="landscape-nav-image" src="images/default_nav.png" usemap="#landscape-nav" width="50%">
         <map id="landscape-nav-map" name="landscape-nav" width="100%">
           <area class="winter" shape="poly" coords="12,24, 598,24, 12,856"
-                onMouseOver="winterHover()" href="#" alt="winter" onclick="nav_content_switcher('winter')">
+                onMouseOver="winterHover()" href="#winter" alt="winter" onclick="nav_content_switcher('winter')">
           <area class="spring" shape="poly" coords="622,24, 1236,24, 652,856, 36,856"
-                onMouseOver="springHover()" href="#" alt="spring" onclick="nav_content_switcher('spring')">
+                onMouseOver="springHover()" href="#spring" alt="spring" onclick="nav_content_switcher('spring')">
           <area class="fall" shape="poly" coords="1261,24, 1261,856, 673,856"
-                onMouseOver="fallHover()" href="#" alt="fall" onclick="nav_content_switcher('fall')">
+                onMouseOver="fallHover()" href="#fall" alt="fall" onclick="nav_content_switcher('fall')">
           <area shape="default" nohref="nohref" onMouseOver="defaultHover()">
         </map>
       </div>

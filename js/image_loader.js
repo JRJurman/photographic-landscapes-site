@@ -81,7 +81,7 @@ function folder_loaders(root, folders) {
     new_element.setAttribute('class', "three columns");
     new_element.setAttribute('id', folder+'-thumb');
     new_element.innerHTML = '\
-      <a href="#">\
+      <a href="#'+root+'#'+folder+'">\
         <img id="'+folder+'" class="thumb" src=' + thumb_path + ' onclick="select_thumb(\''+folder+'\')" width="100%">\
       </a>\
     ';
@@ -146,7 +146,7 @@ function folder_loaders(root, folders) {
         prevImage = "";
       }
       else {
-        prevHref = "href=#";
+        prevHref = "href=#"+root+"#"+folders[index-1];
         prevStatus = "";
         prevImage = 'onclick="select_thumb(\''+folders[index-1]+'\')"';
       }
@@ -163,7 +163,7 @@ function folder_loaders(root, folders) {
         nextImage = "";
       }
       else {
-        nextHref = "href=#";
+        nextHref = "href=#"+root+"#"+folders[index+1];
         nextStatus = "";
         nextImage = 'onclick="select_thumb(\''+folders[index+1]+'\')"';
       }
