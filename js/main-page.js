@@ -84,6 +84,9 @@ function URL_Navigator(urlString) {
   // look for element that points to 'fall', 'winter' or 'spring'
   var splitURL, folderURLIndex, folderURLTitle, imageURLTitle;
   splitURL = urlString.split("#");
+  if (splitURL.length == 1) {
+    nav_content_switcher('home');
+  }
   folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchasing',
                                   'fall', 'winter', 'spring'], splitURL);
 
@@ -100,6 +103,10 @@ function URL_Navigator(urlString) {
     }
   }
 
+}
+
+window.onhashchange = function(args) {
+  URL_Navigator(args.newURL);
 }
 
 // when the document has been loaded
