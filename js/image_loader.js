@@ -44,9 +44,6 @@ function select_thumb(folder) {
   // show the image and text
   document.querySelector("#"+folder+"-full").style.display = '';
 
-  // change the location of the page
-  //TODO
-
 }
 
 // function to append element to last of a selection

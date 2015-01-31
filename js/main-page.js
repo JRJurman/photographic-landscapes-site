@@ -109,8 +109,24 @@ window.onhashchange = function(args) {
   URL_Navigator(args.newURL);
 }
 
+// load the about_me text
+function load_about_me() {
+  var about_me_loader = new XMLHttpRequest();
+  about_me_loader.open("GET", "text-content/about-me.txt",true);
+  about_me_loader.send();
+
+  // load and prepare full text for multiple images
+  about_me_loader.onreadystatechange = function() {
+    if (this.readyState== 4 && this.status == 200){
+      ele = document.querySelector("div#p-about-me");
+      ele.innerHTML = this.responseText;
+    }
+  }
+}
+
 // when the document has been loaded
 document.addEventListener('DOMContentLoaded', function(){
+  load_about_me();
   nav_content_switcher('home');
   imageMapResize("#landscape-nav-map");
   URL_Navigator(document.URL);
