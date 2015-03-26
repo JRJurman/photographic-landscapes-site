@@ -26,14 +26,6 @@ set_selector_display = function(selector, display) {
   });
 }
 
-// check if a url exists
-function UrlExists(url) {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status!=404;
-}
-
 // function to select a thumbnail
 function select_thumb(folder) {
 

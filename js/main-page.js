@@ -124,6 +124,21 @@ function load_about_me() {
   }
 }
 
+// load the about_me text
+function load_shows() {
+  var about_me_loader = new XMLHttpRequest();
+  about_me_loader.open("GET", "text-content/about-me.txt",true);
+  about_me_loader.send();
+
+  // load and prepare full text for multiple images
+  about_me_loader.onreadystatechange = function() {
+    if (this.readyState== 4 && this.status == 200){
+      ele = document.querySelector("div#p-about-me");
+      ele.innerHTML = this.responseText;
+    }
+  }
+}
+
 // when the document has been loaded
 document.addEventListener('DOMContentLoaded', function(){
   load_about_me();
