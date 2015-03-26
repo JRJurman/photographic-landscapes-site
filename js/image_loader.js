@@ -193,7 +193,7 @@ function folder_loaders(root, folders) {
       var new_text_div = document.createElement('div');
       new_text_div.setAttribute('class', folder+"-full text-container ten columns");
       new_text_div.innerHTML = '\
-        <p id='+text_id+' class="'+folder+'-full full-text"></p>\
+        <center><p id='+text_id+' class="'+folder+'-full full-text"></p></center>\
       ';
 
       var prev_div = document.createElement('div');
