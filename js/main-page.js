@@ -87,7 +87,7 @@ function URL_Navigator(urlString) {
   if (splitURL.length == 1) {
     nav_content_switcher('home');
   }
-  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchasing',
+  folderURLIndex = elementSearch(['home', 'about-me', 'gallery-showings', 'purchasing',
                                   'fall', 'winter', 'spring'], splitURL);
 
   // if we found a folder in the url
