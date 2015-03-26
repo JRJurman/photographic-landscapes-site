@@ -65,7 +65,7 @@ function nav_content_switcher(type) {
 }
 
 // function that takes a URL and navigates to a page
-function URL_Navigator(urlString) {
+function URL_Navigator(locationHash) {
 
   // function to tell us if any one element from a list is in another
   // return the index of the secondList which matched the firstList
@@ -83,7 +83,7 @@ function URL_Navigator(urlString) {
 
   // look for element that points to 'fall', 'winter' or 'spring'
   var splitURL, folderURLIndex, folderURLTitle, imageURLTitle;
-  splitURL = urlString.split("#");
+  splitURL = locationHash.split("#");
   if (splitURL.length == 1) {
     nav_content_switcher('home');
   }
@@ -106,7 +106,7 @@ function URL_Navigator(urlString) {
 }
 
 window.onhashchange = function(args) {
-  URL_Navigator(args.newURL);
+  URL_Navigator(location.hash);
 }
 
 // load the about_me text
@@ -144,5 +144,5 @@ document.addEventListener('DOMContentLoaded', function(){
   load_about_me();
   nav_content_switcher('home');
   imageMapResize("#landscape-nav-map");
-  URL_Navigator(document.URL);
+  URL_Navigator(location.hash);
 });
