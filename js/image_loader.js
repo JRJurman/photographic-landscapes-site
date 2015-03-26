@@ -84,6 +84,8 @@ var imagesObj = {
                 "Photo_76"  ]
 }
 
+var total_number_of_images = imagesObj.fall.length + imagesObj.spring.length + imagesObj.winter.length;
+
 /* hide or show a set of elements
  * param: selector can be any selector
  * param: display should be either 'none' (to hide) or '' (to show)
@@ -167,6 +169,10 @@ function folder_loaders(root, folders) {
     append_last("#fulls", full_images_div);
 
     function newFullSection(folder, imageSrc, text_id) {
+
+
+      console.log("Foo");
+
 
       /* FULL IMAGE ROW */
 
