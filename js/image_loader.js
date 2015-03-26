@@ -1,10 +1,6 @@
 // image object that sets up folders
 var imagesObj = {
-  'fall': [     "america",
-                "japan",
-                "children",
-                "black-metal",
-                "detroit"],
+  'fall': [     "photo_10"],
 
   'winter': [   "forge",
                 "dogtown",
