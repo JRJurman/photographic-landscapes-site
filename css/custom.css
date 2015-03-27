@@ -1,5 +1,9 @@
-html {
-    font-family: 'Serif';
+html * {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 15.5px;
 }
 
 .fixed-element {
@@ -35,6 +39,7 @@ li {
 
 #navigation {
   text-align: center;
+  padding-top: 3.1%;
 }
 
 a {
