@@ -86,6 +86,16 @@ var imagesObj = {
 
 var total_number_of_images = imagesObj.fall.length + imagesObj.spring.length + imagesObj.winter.length;
 
+/* updates the css loading bar width
+ */
+increment_progress_bar = function() {
+  var bar = document.getElementById("progress-bar");
+  var progress = parseFloat(bar.style.width.split("%")[0])/100;
+  // the total is times 2, because we have a full image, and a thumbnail
+  console.log(( progress + (1)/(total_number_of_images*2) )*100 + "%");
+  bar.style.width = ( progress + (1)/(total_number_of_images*2) )*100 + "%";
+}
+
 /* hide or show a set of elements
  * param: selector can be any selector
  * param: display should be either 'none' (to hide) or '' (to show)
@@ -140,11 +150,25 @@ function folder_loaders(root, folders) {
     var new_element = document.createElement('div');
     new_element.setAttribute('class', "three columns");
     new_element.setAttribute('id', folder+'-thumb');
-    new_element.innerHTML = '\
-      <a href="#'+root+'#'+folder+'">\
-        <img id="'+folder+'" class="thumb" src=' + thumb_path + ' onclick="select_thumb(\''+folder+'\')" width="100%">\
-      </a>\
-    ';
+
+    var new_element_href = document.createElement('a');
+    new_element_href.setAttribute('href', '#'+root+'#'+folder);
+
+    var new_element_image = document.createElement('img');
+    new_element_image.setAttribute('id', folder);
+    new_element_image.setAttribute('class', "thumb");
+    new_element_image.setAttribute('onclick', "select_thumb(\'"+folder+"\')");
+    new_element_image.setAttribute('width', "100%");
+
+    // when the image has loaded, increase our progress bar
+    new_element_image.onload = function () {
+      increment_progress_bar();
+    };
+
+    // set the source, and append the image to the href, and that href to the div
+    new_element_image.src = thumb_path;
+    new_element_href.appendChild(new_element_image);
+    new_element.appendChild(new_element_href);
 
     // append the div
     append_last(".thumbs.row", new_element)
@@ -183,10 +207,22 @@ function folder_loaders(root, folders) {
 
       var new_image_div = document.createElement('div');
       new_image_div.setAttribute('class', folder+"-full image-container tweleve columns");
-      new_image_div.innerHTML = '\
-        <img class="full-image" src=' + imageSrc + ' width="100%">\
-      ';
 
+      // the image that sits inside the div
+      var new_image_inside_div = document.createElement('img');
+      new_image_inside_div.setAttribute('class', "full-image");
+      new_image_inside_div.setAttribute('width', "100%");
+
+      // when the image has loaded, increase our progress bar
+      new_image_inside_div.onload = function () {
+        increment_progress_bar();
+      };
+
+      // set the source, and append the image to the div
+      new_image_inside_div.src = imageSrc;
+      new_image_div.appendChild(new_image_inside_div);
+
+      // append the div to the row
       append_last('#'+folder+'-full .row.image-row', new_image_div);
 
       /* TEXT ROW */
