@@ -149,7 +149,7 @@ function folder_loaders(root, folders) {
   Array.prototype.forEach.call( folders, function(folder, index) {
 
     // get the image info
-    var thumb_path = "images-" + root + "/" + folder + "/thumb.png";
+    var thumb_path = "images-" + root + "/" + folder + "/thumb.jpg";
 
     // div with thumb and text
     var new_element = document.createElement('div');
@@ -187,7 +187,7 @@ function folder_loaders(root, folders) {
     }
 
     // get the info for the full page version
-    var full_path = "images-" + root + "/" + folder + "/full.png";
+    var full_path = "images-" + root + "/" + folder + "/full.jpg";
     var full_text_path = "images-" + root + "/" + folder + "/full_text.txt";
 
     var full_images_div = document.createElement('div');
