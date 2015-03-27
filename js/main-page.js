@@ -28,9 +28,9 @@ function nav_content_switcher(type) {
   if (type == 'home') {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
-    set_selector_display("#about-me", 'none');
-    set_selector_display("#shows", 'none');
-    set_selector_display("#purchase", 'none');
+    set_selector_display("#about-me-container", 'none');
+    set_selector_display("#shows-container", 'none');
+    set_selector_display("#purchase-container", 'none');
 
     set_selector_display("#landscape-nav", '');
   }
@@ -38,33 +38,33 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
-    set_selector_display("#shows", 'none');
-    set_selector_display("#purchase", 'none');
+    set_selector_display("#shows-container", 'none');
+    set_selector_display("#purchase-container", 'none');
 
-    set_selector_display("#about-me", '');
+    set_selector_display("#about-me-container", '');
   }
   else if (type == 'shows') {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
-    set_selector_display("#about-me", 'none');
-    set_selector_display("#purchase", 'none');
+    set_selector_display("#about-me-container", 'none');
+    set_selector_display("#purchase-container", 'none');
 
-    set_selector_display("#shows", '');
+    set_selector_display("#shows-container", '');
   }
   else if (type == 'purchase') {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
-    set_selector_display("#shows", 'none');
-    set_selector_display("#about-me", 'none');
+    set_selector_display("#shows-container", 'none');
+    set_selector_display("#about-me-container", 'none');
 
-    set_selector_display("#purchase", '');
+    set_selector_display("#purchase-container", '');
   }
   else {
-    set_selector_display("#about-me", 'none');
-    set_selector_display("#shows", 'none');
-    set_selector_display("#purchase", 'none');
+    set_selector_display("#about-me-container", 'none');
+    set_selector_display("#shows-container", 'none');
+    set_selector_display("#purchase-container", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
