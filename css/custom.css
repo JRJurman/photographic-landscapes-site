@@ -10,7 +10,7 @@ p {
   background-image: url("../images/winter1.jpg")
 }
 
-#main-winter:hover {
+.background-loader-winter, #main-winter:hover {
   background-image: url("../images/winterText.jpg")
 }
 
@@ -18,7 +18,7 @@ p {
   background-image: url("../images/spring1.jpg")
 }
 
-#main-spring:hover {
+.background-loader-spring, #main-spring:hover {
   background-image: url("../images/springText.jpg")
 }
 
@@ -26,7 +26,7 @@ p {
   background-image: url("../images/fall1.jpg")
 }
 
-#main-fall:hover {
+.background-loader-fall, #main-fall:hover {
   background-image: url("../images/fallText.jpg")
 }
 
