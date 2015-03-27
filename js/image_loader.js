@@ -84,22 +84,6 @@ var imagesObj = {
                 "Photo_76"  ]
 }
 
-var total_number_of_images = imagesObj.fall.length + imagesObj.spring.length + imagesObj.winter.length;
-
-/* updates the css loading bar width
- */
-increment_progress_bar = function() {
-  var bar = document.getElementById("progress-bar");
-  var progress = parseFloat(bar.style.width.split("%")[0])/100;
-  // the total is times 2, because we have a full image, and a thumbnail
-  var new_progress = ( progress + (1)/(total_number_of_images*2) )*100
-  bar.style.width = new_progress + "%";
-
-  if (new_progress > 100) {
-    var backbar = document.getElementById("back-progress-bar");
-    backbar.style.display = "none";
-  }
-}
 
 /* hide or show a set of elements
  * param: selector can be any selector
@@ -165,11 +149,6 @@ function folder_loaders(root, folders) {
     new_element_image.setAttribute('onclick', "select_thumb(\'"+folder+"\')");
     new_element_image.setAttribute('width', "100%");
 
-    // when the image has loaded, increase our progress bar
-    new_element_image.onload = function () {
-      increment_progress_bar();
-    };
-
     // set the source, and append the image to the href, and that href to the div
     new_element_image.src = thumb_path;
     new_element_href.appendChild(new_element_image);
@@ -213,11 +192,6 @@ function folder_loaders(root, folders) {
       var new_image_inside_div = document.createElement('img');
       new_image_inside_div.setAttribute('class', "full-image");
       new_image_inside_div.setAttribute('width', "100%");
-
-      // when the image has loaded, increase our progress bar
-      new_image_inside_div.onload = function () {
-        increment_progress_bar();
-      };
 
       // set the source, and append the image to the div
       new_image_inside_div.src = imageSrc;

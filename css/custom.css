@@ -1,18 +1,42 @@
-.fixed-element {
-    background-color: #ffffff;
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:100;
+#main-winter {
+  background-image: url("../images/winter1.png")
 }
 
-#progress-bar {
-  background-color: #B6B6B6;
-  height:5px;
+#main-winter:hover {
+  background-image: url("../images/winterText.png")
 }
 
-.progress-bar-full {
-  height:0px;
+#main-spring {
+  background-image: url("../images/spring1.png")
+}
+
+#main-spring:hover {
+  background-image: url("../images/springText.png")
+}
+
+#main-fall {
+  background-image: url("../images/fall1.png")
+}
+
+#main-fall:hover {
+  background-image: url("../images/fallText.png")
+}
+
+.link-div {
+  padding-bottom: 115px;
+  padding-right: 519px;
+}
+
+.main-links {
+  height: 115px;
+  width: 519px;
+  background-repeat: no-repeat;
+  padding-bottom: 15px;
+}
+
+.main-nav > div {
+  width: 519px;
+  margin: auto;
 }
 
 li {
