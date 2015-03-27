@@ -243,35 +243,51 @@ function folder_loaders(root, folders) {
       var prevHref, prevStatus, prevImage
       if(index == 0) {
         prevHref = "";
-        prevStatus = "class=inactive"
+        prevStatus = "inactive"
         prevImage = "";
       }
       else {
-        prevHref = "href=#"+root+"#"+folders[index-1];
+        prevHref = "#"+root+"#"+folders[index-1];
         prevStatus = "";
-        prevImage = 'onclick="select_thumb(\''+folders[index-1]+'\')"';
+        prevImage = 'select_thumb(\''+folders[index-1]+'\')';
       }
       prev_div.setAttribute('class', "one columns");
-      prev_div.innerHTML = '\
-        <a '+prevHref+' '+prevStatus+' '+prevImage+' >prev</a>\
-      ';
+      var prev_link = document.createElement('a');
+      prev_link.setAttribute('class', "prev-button "+prevStatus);
+      if (prevImage != "") {
+        prev_link.setAttribute('onclick', prevImage);
+      }
+      if (prevHref != "") {
+        prev_link.setAttribute('href', prevHref);
+      }
+      prev_link.innerHTML = "prev";
+
+      prev_div.appendChild(prev_link);
 
       var next_div = document.createElement('div');
       var nextHref, nextStatus, nextImage
       if(index == folders.length-1) {
         nextHref = "";
-        nextStatus = "class=inactive"
+        nextStatus = "inactive"
         nextImage = "";
       }
       else {
-        nextHref = "href=#"+root+"#"+folders[index+1];
+        nextHref = "#"+root+"#"+folders[index+1];
         nextStatus = "";
-        nextImage = 'onclick="select_thumb(\''+folders[index+1]+'\')"';
+        nextImage = 'select_thumb(\''+folders[index+1]+'\')';
       }
       next_div.setAttribute('class', "one columns");
-      next_div.innerHTML = '\
-        <a '+nextHref+' '+nextStatus+' '+nextImage+' >next</a>\
-      ';
+      var next_link = document.createElement('a');
+      next_link.setAttribute('class', "next-button "+nextStatus);
+      if (nextImage != "") {
+        next_link.setAttribute('onclick', nextImage);
+      }
+      if (nextHref != "") {
+        next_link.setAttribute('href', nextHref);
+      }
+      next_link.innerHTML = "next";
+
+      next_div.appendChild(next_link);
 
       append_last('#'+folder+'-full .row.text-row', prev_div);
       append_last('#'+folder+'-full .row.text-row', new_text_div);

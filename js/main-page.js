@@ -32,9 +32,7 @@ function nav_content_switcher(type) {
     set_selector_display("#shows", 'none');
     set_selector_display("#purchase", 'none');
 
-
     set_selector_display("#landscape-nav", '');
-    imageMapResize("#landscape-nav-map");
   }
   else if (type == 'about-me') {
     set_selector_display(".thumbs.row", 'none');
@@ -111,6 +109,20 @@ function URL_Navigator(locationHash) {
     if (folderURLIndex != splitURL.length-1) {
       imageURLTitle = splitURL[folderURLIndex+1];
       document.querySelector("img#"+imageURLTitle).click();
+
+      // update the next and prev keybindings
+      var imageDiv = document.getElementById(imageURLTitle+"-full");
+      var prevLink = imageDiv.getElementsByClassName("prev-button")[0];
+      var nextLink = imageDiv.getElementsByClassName("next-button")[0];
+
+      document.onkeyup = function(event) {
+        if (event.keyCode == 37) {
+          prevLink.click();
+        }
+        else if (event.keyCode == 39) {
+          nextLink.click();
+        }
+      };
     }
   }
 
@@ -142,6 +154,5 @@ document.addEventListener('DOMContentLoaded', function(){
   text_loader("text-content/purchase.txt", "div#p-purchase");
 
   nav_content_switcher('home');
-  imageMapResize("#landscape-nav-map");
   URL_Navigator(location.hash);
 });
