@@ -40,6 +40,8 @@ p {
   width: 519px;
   background-repeat: no-repeat;
   padding-bottom: 15px;
+  -webkit-transition-delay: 0.1s; /* Safari */
+  transition-delay: 0.1s;
 }
 
 .main-nav > div {
