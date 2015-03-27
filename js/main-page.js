@@ -29,6 +29,9 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#about-me", 'none');
+    set_selector_display("#shows", 'none');
+    set_selector_display("#purchase", 'none');
+
 
     set_selector_display("#landscape-nav", '');
     imageMapResize("#landscape-nav-map");
@@ -37,6 +40,8 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#shows", 'none');
+    set_selector_display("#purchase", 'none');
 
     set_selector_display("#about-me", '');
   }
@@ -44,18 +49,24 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#about-me", 'none');
+    set_selector_display("#purchase", 'none');
 
-    set_selector_display("#about-me", '');
+    set_selector_display("#shows", '');
   }
-  else if (type == 'purchasing') {
+  else if (type == 'purchase') {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#shows", 'none');
+    set_selector_display("#about-me", 'none');
 
-    set_selector_display("#about-me", '');
+    set_selector_display("#purchase", '');
   }
   else {
     set_selector_display("#about-me", 'none');
+    set_selector_display("#shows", 'none');
+    set_selector_display("#purchase", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
@@ -87,7 +98,7 @@ function URL_Navigator(locationHash) {
   if (splitURL.length == 1) {
     nav_content_switcher('home');
   }
-  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchasing',
+  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchase',
                                   'fall', 'winter', 'spring'], splitURL);
 
   // if we found a folder in the url
@@ -109,31 +120,16 @@ window.onhashchange = function(args) {
   URL_Navigator(location.hash);
 }
 
-// load the about_me text
-function load_about_me() {
-  var about_me_loader = new XMLHttpRequest();
-  about_me_loader.open("GET", "text-content/about-me.txt",true);
-  about_me_loader.send();
+// load any of the text pages
+function text_loader(file, divId) {
+  var file_loader = new XMLHttpRequest();
+  file_loader.open("GET", file, true);
+  file_loader.send();
 
-  // load and prepare full text for multiple images
-  about_me_loader.onreadystatechange = function() {
+  // load and prepare text
+  file_loader.onreadystatechange = function() {
     if (this.readyState== 4 && this.status == 200){
-      ele = document.querySelector("div#p-about-me");
-      ele.innerHTML = this.responseText;
-    }
-  }
-}
-
-// load the about_me text
-function load_shows() {
-  var about_me_loader = new XMLHttpRequest();
-  about_me_loader.open("GET", "text-content/about-me.txt",true);
-  about_me_loader.send();
-
-  // load and prepare full text for multiple images
-  about_me_loader.onreadystatechange = function() {
-    if (this.readyState== 4 && this.status == 200){
-      ele = document.querySelector("div#p-about-me");
+      ele = document.querySelector(divId);
       ele.innerHTML = this.responseText;
     }
   }
@@ -141,7 +137,10 @@ function load_shows() {
 
 // when the document has been loaded
 document.addEventListener('DOMContentLoaded', function(){
-  load_about_me();
+  text_loader("text-content/about-me.txt", "div#p-about-me");
+  text_loader("text-content/shows.txt", "div#p-shows");
+  text_loader("text-content/purchase.txt", "div#p-purchase");
+
   nav_content_switcher('home');
   imageMapResize("#landscape-nav-map");
   URL_Navigator(location.hash);

@@ -12,6 +12,6 @@
 
 <p class="contact">
   <a href="http://www.imagecityphotographygallery.com/Shows/201503show/index.htm">
-  http://www.imagecityphotographygallery.com/Shows/201503show/index.htm
+    Image City Gallery Page
   </a>
 </p>
