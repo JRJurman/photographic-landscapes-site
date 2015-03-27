@@ -92,8 +92,13 @@ increment_progress_bar = function() {
   var bar = document.getElementById("progress-bar");
   var progress = parseFloat(bar.style.width.split("%")[0])/100;
   // the total is times 2, because we have a full image, and a thumbnail
-  console.log(( progress + (1)/(total_number_of_images*2) )*100 + "%");
-  bar.style.width = ( progress + (1)/(total_number_of_images*2) )*100 + "%";
+  var new_progress = ( progress + (1)/(total_number_of_images*2) )*100
+  bar.style.width = new_progress + "%";
+
+  if (new_progress > 100) {
+    var backbar = document.getElementById("back-progress-bar");
+    backbar.style.display = "none";
+  }
 }
 
 /* hide or show a set of elements
@@ -193,10 +198,6 @@ function folder_loaders(root, folders) {
     append_last("#fulls", full_images_div);
 
     function newFullSection(folder, imageSrc, text_id) {
-
-
-      console.log("Foo");
-
 
       /* FULL IMAGE ROW */
 
