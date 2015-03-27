@@ -1,3 +1,7 @@
+html {
+    font-family: 'Serif';
+}
+
 .fixed-element {
     background-color: #ffffff;
     position:fixed;
