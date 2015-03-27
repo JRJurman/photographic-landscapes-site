@@ -1,3 +1,11 @@
+html * {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 15.5px;
+}
+
 #main-winter {
   background-image: url("../images/winter1.png")
 }
@@ -55,6 +63,7 @@ li {
 
 #navigation {
   text-align: center;
+  padding-top: 3.1%;
 }
 
 a {
