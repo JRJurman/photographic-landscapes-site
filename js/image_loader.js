@@ -133,11 +133,11 @@ function folder_loaders(root, folders) {
   Array.prototype.forEach.call( folders, function(folder, index) {
 
     // get the image info
-    var thumb_path = "images-" + root + "/" + folder + "/thumb.jpg";
+    var thumb_path = "images-" + root + "/" + folder + "/full.jpg";
 
     // div with thumb and text
     var new_element = document.createElement('div');
-    new_element.setAttribute('class', "three columns");
+    new_element.setAttribute('class', "three columns thumb-div");
     new_element.setAttribute('id', folder+'-thumb');
 
     var new_element_href = document.createElement('a');
@@ -176,14 +176,18 @@ function folder_loaders(root, folders) {
     // append the div
     append_last("#fulls", full_images_div);
 
-    function newFullSection(folder, imageSrc, text_id) {
+    function newFullSection(folder, imageSrc, text_id, full_div) {
+
+      // center tag to attach everything to
+      var center_tag = document.createElement('center');
 
       /* FULL IMAGE ROW */
 
-      var new_row = document.createElement('div');
-      new_row.setAttribute('class', "row image-row");
+      var image_row = document.createElement('div');
+      image_row.setAttribute('class', "row image-row");
 
-      append_last('#'+folder+'-full', new_row);
+      center_tag.appendChild(image_row);
+      full_div.appendChild(center_tag);
 
       var new_image_div = document.createElement('div');
       new_image_div.setAttribute('class', folder+"-full image-container tweleve columns");
@@ -191,7 +195,11 @@ function folder_loaders(root, folders) {
       // the image that sits inside the div
       var new_image_inside_div = document.createElement('img');
       new_image_inside_div.setAttribute('class', "full-image");
-      new_image_inside_div.setAttribute('width', "100%");
+
+      // figure out the height to give the image
+      var wHeight = window.innerHeight;
+      var iHeight = wHeight*0.85;
+      new_image_inside_div.setAttribute('height', iHeight + "px");
 
       // set the source, and append the image to the div
       new_image_inside_div.src = imageSrc;
@@ -200,20 +208,17 @@ function folder_loaders(root, folders) {
       // append the div to the row
       append_last('#'+folder+'-full .row.image-row', new_image_div);
 
+
       /* TEXT ROW */
 
-      var new_row = document.createElement('div');
-      new_row.setAttribute('class', "row text-row");
+      var text_row = document.createElement('div');
+      text_row.setAttribute('class', "text-row");
 
-      append_last('#'+folder+'-full', new_row);
+      var new_text_div = document.createElement('span');
+      new_text_div.setAttribute('class', folder+"-full text-container full-text");
+      new_text_div.setAttribute('id', text_id);
 
-      var new_text_div = document.createElement('div');
-      new_text_div.setAttribute('class', folder+"-full text-container ten columns");
-      new_text_div.innerHTML = '\
-        <center><p id='+text_id+' class="'+folder+'-full full-text"></p></center>\
-      ';
-
-      var prev_div = document.createElement('div');
+      var prev_div = document.createElement('span');
       var prevHref, prevStatus, prevImage
       if(index == 0) {
         prevHref = "";
@@ -225,7 +230,6 @@ function folder_loaders(root, folders) {
         prevStatus = "";
         prevImage = 'select_thumb(\''+folders[index-1]+'\')';
       }
-      prev_div.setAttribute('class', "one columns");
       var prev_link = document.createElement('a');
       prev_link.setAttribute('class', "prev-button "+prevStatus);
       if (prevImage != "") {
@@ -238,7 +242,7 @@ function folder_loaders(root, folders) {
 
       prev_div.appendChild(prev_link);
 
-      var next_div = document.createElement('div');
+      var next_div = document.createElement('span');
       var nextHref, nextStatus, nextImage
       if(index == folders.length-1) {
         nextHref = "";
@@ -250,7 +254,6 @@ function folder_loaders(root, folders) {
         nextStatus = "";
         nextImage = 'select_thumb(\''+folders[index+1]+'\')';
       }
-      next_div.setAttribute('class', "one columns");
       var next_link = document.createElement('a');
       next_link.setAttribute('class', "next-button "+nextStatus);
       if (nextImage != "") {
@@ -263,13 +266,19 @@ function folder_loaders(root, folders) {
 
       next_div.appendChild(next_link);
 
-      append_last('#'+folder+'-full .row.text-row', prev_div);
-      append_last('#'+folder+'-full .row.text-row', new_text_div);
-      append_last('#'+folder+'-full .row.text-row', next_div);
+      text_row.appendChild(prev_div);
+      text_row.appendChild(new_text_div);
+      text_row.appendChild(next_div);
+
+      center_tag.appendChild(text_row);
+
+
+
+      full_div.appendChild(center_tag)
 
     }
 
-    newFullSection(folder, full_path, "text_block");
+    newFullSection(folder, full_path, "text_block", full_images_div);
 
     // load in the full_text
     var full_text;

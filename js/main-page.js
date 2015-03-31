@@ -25,43 +25,72 @@ set_selector_display = function(selector, display) {
 
 // when a navigation link has been clicked
 function nav_content_switcher(type) {
+
+  // bold the only section header
+  var menus = document.getElementsByClassName('menu-button');
+  Array.prototype.forEach.call(menus, function(e) {
+    e.style.fontWeight = "normal";
+  });
+
   if (type == 'home') {
+    // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
 
+    // show the important sections
     set_selector_display("#landscape-nav", '');
+
+    // bold the section header
+    document.getElementById('home-button').style.fontWeight = "bold";
+
   }
   else if (type == 'about-me') {
+    // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
 
+    // show the important sections
     set_selector_display("#about-me-container", '');
+
+    // bold the section header
+    document.getElementById('about-me-button').style.fontWeight = "bold";
   }
   else if (type == 'shows') {
+    // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#purchase-container", 'none');
 
+    // show the important sections
     set_selector_display("#shows-container", '');
+
+    // bold the section header
+    document.getElementById('shows-button').style.fontWeight = "bold";
   }
   else if (type == 'purchase') {
+    // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#about-me-container", 'none');
 
+    // show the important sections
     set_selector_display("#purchase-container", '');
+
+    // bold the section header
+    document.getElementById('purchase-button').style.fontWeight = "bold";
   }
   else {
+    // hide the unimportant sections
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
@@ -69,7 +98,11 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
 
+    // show the important sections
     set_selector_display( ".thumbs.row."+type , '');
+
+    // bold the section header
+    document.getElementById('home-button').style.fontWeight = "bold";
   }
 }
 

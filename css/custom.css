@@ -6,6 +6,41 @@ p {
   font-size: 15.5px;
 }
 
+.prev-button {
+  margin-left: 20%;
+  position: fixed;
+  left: 0px;
+}
+
+.text-row {
+  position: fixed;
+  width: 100%;
+  height: 3em;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  background-color: white;
+}
+
+.next-button {
+  margin-right: 20%;
+  position: fixed;
+  right: 0px;
+}
+
+.thumb-div {
+  max-width: 288px;
+  max-height: 202px;
+  overflow: hidden;
+}
+
+.image-row {
+  margin-left: auto;
+  margin-right: auto;
+  width: 87.5%;
+}
+
 #main-winter {
   background-image: url("../images/winter1.jpg")
 }
