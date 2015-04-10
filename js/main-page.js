@@ -36,6 +36,7 @@ function nav_content_switcher(type) {
     // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
+    set_selector_display("#contact-container", 'none');
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
@@ -52,6 +53,7 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#contact-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
 
@@ -66,6 +68,7 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#contact-container", 'none');
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#purchase-container", 'none');
 
@@ -80,6 +83,7 @@ function nav_content_switcher(type) {
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
     set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#contact-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#about-me-container", 'none');
 
@@ -89,11 +93,27 @@ function nav_content_switcher(type) {
     // bold the section header
     document.getElementById('purchase-button').style.fontWeight = "bold";
   }
+  else if (type == 'contact') {
+    // hide the unimportant sections
+    set_selector_display(".thumbs.row", 'none');
+    set_selector_display(".full-images", 'none');
+    set_selector_display("#landscape-nav", 'none');
+    set_selector_display("#shows-container", 'none');
+    set_selector_display("#about-me-container", 'none');
+    set_selector_display("#purchase-container", 'none');
+
+    // show the important sections
+    set_selector_display("#contact-container", '');
+
+    // bold the section header
+    document.getElementById('contact-button').style.fontWeight = "bold";
+  }
   else {
     // hide the unimportant sections
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#purchase-container", 'none');
+    set_selector_display("#contact-container", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
@@ -129,7 +149,7 @@ function URL_Navigator(locationHash) {
   if (splitURL.length == 1) {
     nav_content_switcher('home');
   }
-  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchase',
+  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchase', 'contact',
                                   'fall', 'winter', 'spring'], splitURL);
 
   // if we found a folder in the url
@@ -185,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function(){
   text_loader("text-content/about-me.txt", "div#p-about-me");
   text_loader("text-content/shows.txt", "div#p-shows");
   text_loader("text-content/purchase.txt", "div#p-purchase");
+  text_loader("text-content/contact.txt", "div#p-contact");
 
   nav_content_switcher('home');
   URL_Navigator(location.hash);

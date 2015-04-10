@@ -1,6 +1,52 @@
-<p>
-Please contact me for pricing info at:
-andyjurman@gmail.com
+<table>
+  <tr>
+    <th>Overall Size</th>
+    <th>Approx. Image Size</th>
+    <th>Mounted/Matted Only</th>
+    <th>With Framing</th>
+  </tr>
+  <tr>
+    <td>8”x10”</td>
+    <td>4”x6”</td>
+    <td>$19.00</td>
+    <td>$39.00</td>
+  </tr>
+  <tr>
+    <td>11”x14”</td>
+    <td>6” x10”</td>
+    <td>$39.00</td>
+    <td>$69.00</td>
+  </tr>
+  <tr>
+    <td>16”x20”</td>
+    <td>11”x16”</td>
+    <td>$59.00</td>
+    <td>$99.00</td>
+  </tr>
+  <tr>
+    <td>18”x24”</td>
+    <td>13”x20”</td>
+    <td>$89.00</td>
+    <td>$139.00</td>
+  </tr>
+  <tr>
+    <td>26”x36”</td>
+    <td>20”x30”</td>
+    <td>$129.00</td>
+    <td>$219.00</td>
+  </tr>
+</table>
 
-  
+<p>
+Prints on Canvas, unframed, are priced as follows:
+<br>
+	24”x36” ………………….. $279.00
+<br>
+	30”x45” ………………….. $379.00
+<br>
+	36”x54” …………………...$479.00
+<br>
+	40”x60” …………………...$579.00
+<br>
+(dimensions are approximate; pricing does not include tax)
 </p>
