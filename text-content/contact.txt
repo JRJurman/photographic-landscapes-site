@@ -1,5 +1,5 @@
 <p>
-  Please contact me at:
-  Via email here at<a href="mailto:  andyjurman@gmail.com">   andyjurman@gmail.com</a>
-  or by phone here: (585) 266-4954
+  Please contact me<br>
+  via email: <a href="mailto:  andyjurman@gmail.com">   andyjurman@gmail.com</a><br>
+  or by phone: (585) 266-4954
 </p>                             
