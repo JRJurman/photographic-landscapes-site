@@ -293,7 +293,7 @@ function folder_loaders(root, folders) {
         full_text = this.responseText;
 
         ele = document.querySelector("#text_block."+folder+"-full.full-text");
-        ele.textContent = full_text;
+        ele.textContent = folder + ": " + full_text;
       }
     }
 
