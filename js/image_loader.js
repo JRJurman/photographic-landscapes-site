@@ -51,6 +51,7 @@ var imagesObj = {
                 "Photo_82",
                 "Photo_83",
                 "Photo_85",
+                "Photo_89",
   ],
 
   'winter': [
