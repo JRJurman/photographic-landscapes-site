@@ -43,7 +43,9 @@ var imagesObj = {
                 "Photo_65",
                 "Photo_67",
                 "Photo_68",
-                "Photo_77"   ],
+                "Photo_77",
+                "Photo_83",
+  ],
 
   'winter': [
                 "Photo_03",
@@ -81,7 +83,8 @@ var imagesObj = {
                 "Photo_73",
                 "Photo_74",
                 "Photo_75",
-                "Photo_76"  ]
+                "Photo_76"
+  ]
 }
 
 
