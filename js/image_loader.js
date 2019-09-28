@@ -81,7 +81,9 @@ var imagesObj = {
                 "Photo_73",
                 "Photo_74",
                 "Photo_75",
-                "Photo_76"  ]
+                "Photo_76",
+                "Photo_83"
+  ]
 }
 
 
