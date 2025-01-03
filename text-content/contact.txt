@@ -1,5 +1,4 @@
 <p>
-  Contact Information<br>
-  email: <a href="mailto:  andyjurman@gmail.com">   andyjurman@gmail.com</a><br>
+  email: <a href="mailto:andyjurman@gmail.com">andyjurman@gmail.com</a><br>
   phone: (585) 266-4954
-</p>                             
+</p>

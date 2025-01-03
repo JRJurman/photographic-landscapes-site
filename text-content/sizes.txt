@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Overall Size</th>
+    <th>Approx. Image Size</th>
+  </tr>
+  <tr>
+    <td>8”x10”</td>
+    <td>4”x6”</td>
+  </tr>
+  <tr>
+    <td>11”x14”</td>
+    <td>6” x10”</td>
+  </tr>
+  <tr>
+    <td>16”x20”</td>
+    <td>11”x16”</td>
+  </tr>
+  <tr>
+    <td>18”x24”</td>
+    <td>13”x20”</td>
+  </tr>
+  <tr>
+    <td>26”x36”</td>
+    <td>20”x30”</td>
+  </tr>
+</table>

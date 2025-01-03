@@ -1,17 +1,3 @@
-// hover functions for home navigation
-winterHover = function() {
-  document.querySelector("#landscape-nav-image").setAttribute("src", "images/winter_nav.png");
-}
-fallHover = function() {
-  document.querySelector("#landscape-nav-image").setAttribute("src", "images/fall_nav.png");
-}
-springHover = function() {
-  document.querySelector("#landscape-nav-image").setAttribute("src", "images/spring_nav.png");
-}
-defaultHover = function() {
-  document.querySelector("#landscape-nav-image").setAttribute("src", "images/default_nav.png");
-}
-
 /* hide or show a set of elements
  * param: selector can be any selector
  * param: display should be either 'none' (to hide) or '' (to show)
@@ -39,14 +25,13 @@ function nav_content_switcher(type) {
     set_selector_display("#contact-container", 'none');
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
-    set_selector_display("#purchase-container", 'none');
+    set_selector_display("#sizes-container", 'none');
 
     // show the important sections
     set_selector_display("#landscape-nav", '');
 
     // bold the section header
     document.getElementById('home-button').style.fontWeight = "bold";
-
   }
   else if (type == 'about-me') {
     // hide the unimportant sections
@@ -55,7 +40,7 @@ function nav_content_switcher(type) {
     set_selector_display("#landscape-nav", 'none');
     set_selector_display("#contact-container", 'none');
     set_selector_display("#shows-container", 'none');
-    set_selector_display("#purchase-container", 'none');
+    set_selector_display("#sizes-container", 'none');
 
     // show the important sections
     set_selector_display("#about-me-container", '');
@@ -63,22 +48,7 @@ function nav_content_switcher(type) {
     // bold the section header
     document.getElementById('about-me-button').style.fontWeight = "bold";
   }
-  else if (type == 'shows') {
-    // hide the unimportant sections
-    set_selector_display(".thumbs.row", 'none');
-    set_selector_display(".full-images", 'none');
-    set_selector_display("#landscape-nav", 'none');
-    set_selector_display("#contact-container", 'none');
-    set_selector_display("#about-me-container", 'none');
-    set_selector_display("#purchase-container", 'none');
-
-    // show the important sections
-    set_selector_display("#shows-container", '');
-
-    // bold the section header
-    document.getElementById('shows-button').style.fontWeight = "bold";
-  }
-  else if (type == 'purchase') {
+  else if (type == 'sizes') {
     // hide the unimportant sections
     set_selector_display(".thumbs.row", 'none');
     set_selector_display(".full-images", 'none');
@@ -88,10 +58,10 @@ function nav_content_switcher(type) {
     set_selector_display("#about-me-container", 'none');
 
     // show the important sections
-    set_selector_display("#purchase-container", '');
+    set_selector_display("#sizes-container", '');
 
     // bold the section header
-    document.getElementById('purchase-button').style.fontWeight = "bold";
+    document.getElementById('sizes-button').style.fontWeight = "bold";
   }
   else if (type == 'contact') {
     // hide the unimportant sections
@@ -100,7 +70,7 @@ function nav_content_switcher(type) {
     set_selector_display("#landscape-nav", 'none');
     set_selector_display("#shows-container", 'none');
     set_selector_display("#about-me-container", 'none');
-    set_selector_display("#purchase-container", 'none');
+    set_selector_display("#sizes-container", 'none');
 
     // show the important sections
     set_selector_display("#contact-container", '');
@@ -112,7 +82,7 @@ function nav_content_switcher(type) {
     // hide the unimportant sections
     set_selector_display("#about-me-container", 'none');
     set_selector_display("#shows-container", 'none');
-    set_selector_display("#purchase-container", 'none');
+    set_selector_display("#sizes-container", 'none');
     set_selector_display("#contact-container", 'none');
     set_selector_display("#landscape-nav", 'none');
     set_selector_display(".thumbs.row", 'none');
@@ -122,7 +92,7 @@ function nav_content_switcher(type) {
     set_selector_display( ".thumbs.row."+type , '');
 
     // bold the section header
-    document.getElementById('home-button').style.fontWeight = "bold";
+    // document.getElementById('home-button').style.fontWeight = "bold";
   }
 }
 
@@ -143,14 +113,13 @@ function URL_Navigator(locationHash) {
     return secondListIndex;
   }
 
-  // look for element that points to 'fall', 'winter' or 'spring'
+  // look for element that points to 'landscapes', 'manhattan', or 'installations'
   var splitURL, folderURLIndex, folderURLTitle, imageURLTitle;
   splitURL = locationHash.split("#");
   if (splitURL.length == 1) {
-    nav_content_switcher('home');
+    nav_content_switcher('about-me');
   }
-  folderURLIndex = elementSearch(['home', 'about-me', 'shows', 'purchase', 'contact',
-                                  'fall', 'winter', 'spring'], splitURL);
+  folderURLIndex = elementSearch(['about-me', 'sizes', 'contact', 'landscapes', 'manhattan', 'installations'], splitURL);
 
   // if we found a folder in the url
   if (folderURLIndex != -1) {
@@ -204,9 +173,9 @@ function text_loader(file, divId) {
 document.addEventListener('DOMContentLoaded', function(){
   text_loader("text-content/about-me.txt", "div#p-about-me");
   text_loader("text-content/shows.txt", "div#p-shows");
-  text_loader("text-content/purchase.txt", "div#p-purchase");
+  text_loader("text-content/sizes.txt", "div#p-sizes");
   text_loader("text-content/contact.txt", "div#p-contact");
 
-  nav_content_switcher('home');
+  nav_content_switcher('about-me');
   URL_Navigator(location.hash);
 });
